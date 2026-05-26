@@ -11,8 +11,7 @@ int main()
     //scanf("%d", &n);
 
     sum = 0;
-    i = 0;
-    for (i; i < n; i++) {
+    for (i = 0; i < n; i++) {
         printf("Введите количество яблок на яблоне\n");
         scanf("%d", &x);
         sum += x;
