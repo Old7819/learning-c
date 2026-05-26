@@ -43,6 +43,7 @@ int main() {
     
     scanf("%d%d", &x1, &y1);
     scanf("%d%d", &x2, &y2);
+    
     rotateC(&x1, &y1, &x2, &y2);
     printf("%d %d %d %d\n", x1, y1, x2, y2);
     
