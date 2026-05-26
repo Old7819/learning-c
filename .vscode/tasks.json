@@ -9,16 +9,18 @@
                 "-g",
                 "${file}",
                 "-o",
-                "build/${fileBasenameNoExtension}",
+                "${workspaceFolder}/build/${fileBasenameNoExtension}",
                 "-Wall",
                 "-Wextra"
             ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": ["$gcc"],
-            "detail": "Compile C file to build/ directory"
+            "problemMatcher": ["$gcc"]
         }
     ]
 }

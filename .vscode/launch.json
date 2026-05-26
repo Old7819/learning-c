@@ -13,7 +13,7 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "/usr/bin/gdb",
-            "preLaunchTask": "Build C file",
+            "preLaunchTask": "Build C file"
         }
     ]
 }
