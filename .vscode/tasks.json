@@ -2,25 +2,22 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build C file",
+            "label": "Build All (Make)",
             "type": "shell",
-            "command": "/usr/bin/gcc",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${workspaceFolder}/build/${fileBasenameNoExtension}",
-                "-Wall",
-                "-Wextra"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
+            "command": "make",
+            "args": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Clean Build",
+            "type": "shell",
+            "command": "make",
+            "args": ["clean"],
+            "problemMatcher": []
         }
     ]
 }
