@@ -8,26 +8,23 @@ int main()
     int i;
     int min;
     int m;
-    int temp;
 
     printf("Введите количество чисел\n");
     scanf("%d", &n);
 
-    for (i = 0; i < n; i++) {
-        //printf("Введите число\n");
-        scanf("%d", &m);
+    scanf("%d", &m);    // считываем первое число
+    min = m;
+
+    // продилжаем считывать со второго числа
+    for (i = 1; i < n; i++) {
         printf("%d ", m);
-        min = m;
-        temp = m;
-        //printf("temp=%d m=%d\n", temp, m);
-        if (temp > m) {
+        scanf("%d", &m);
+        if (m < min) {
             min = m;
-        } else {
-            temp = m;
         }
-        //printf("temp=%d m=%d\n", temp, m);
     }
-    printf("\n%d\n", min);
+    printf("%d\n", m);
+    printf("%d\n", min);
     
     return 0;
 }
