@@ -18,7 +18,14 @@ int main()
 
     while (n > 0) {
         digit = n % 10;
-        
+        new = new * 10 + digit; // собираем число в обратном порядке (склеиваем)
+        n /= 10;
+    }
+    
+    if (original == new) {
+        printf("YES\n");
+    } else {
+        printf("NO\n");
     }
 
     return 0;
