@@ -19,12 +19,39 @@
 
 int main()
 {
-    unsigned long long int n;
-    int k;  // степень числа
-    int i, j;
-    unsigned long long int temp;
+    unsigned long long n;
+    int k;
+    unsigned long long root = 1;
+    unsigned long long temp;
+    int found_any = 0;  // флаг
 
-    scanf("%llu%d", &n, &k);
+    scanf("%llu %d", &n, &k);
+    temp = n;
+
+    // Ищем множители начиная с 2
+    for (unsigned long long i = 2; i * i <= temp; i++) {
+        unsigned long long power = 1;
+        
+        // Вычисляем i^k
+        for (int j = 0; j < k; j++) {
+            power *= i;
+        }
+        
+        // Пока i^k делит temp
+        while (temp % power == 0) {
+            temp /= power;
+            printf("%llu %llu\n", i, temp);   
+            root *= i;            // Копим корень
+            found_any = 1;
+        }
+    }
+
+    // Если что-то нашли и остаток = 1
+    if (found_any && temp == 1) {
+        printf("%llu\n", root);  // Печатаем корень
+    } else {
+        printf("-1\n");  // Не является k-й степенью
+    }
 
     return 0;
 }
