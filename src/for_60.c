@@ -4,7 +4,23 @@
 
 int main()
 {
+    int d;
+    unsigned long long int k;
+    int total;
+    unsigned long long int temp;
 
+    scanf("%d%llu", &d, &k);
+    temp = k;
+    total = 0;
+
+    while (temp > 0) {
+        int ost = temp % 10;
+        if (ost == d) {
+            total += 1;
+        }
+        temp /= 10;
+    }
+    printf("%d %llu %d\n", d, k, total);
 
     return 0;
 }
